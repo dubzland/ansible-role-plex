@@ -1,0 +1,35 @@
+---
+- name: ensure the plex key is installed
+  apt_key:
+    url: https://downloads.plex.tv/plex-keys/PlexSign.key
+    state: present
+  tags:
+    - apt
+    - plex
+
+- name: ensure the apt https transport is installed
+  apt:
+    name: apt-transport-https
+    state: present
+  tags:
+    - apt
+    - plex
+
+- name: ensure the plex repo is available
+  apt_repository:
+    repo: deb https://downloads.plex.tv/repo/deb ./public main
+    state: present
+    update_cache: yes
+  tags:
+    - apt
+    - plex
+
+- name: ensure plex is installed
+  apt:
+    name: plexmediaserver
+    state: present
+  tags:
+    - apt
+    - plex
+
+- import_tasks: nginx.yml
