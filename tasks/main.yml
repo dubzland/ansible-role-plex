@@ -31,5 +31,3 @@
   tags:
     - apt
     - plex
-
-- import_tasks: nginx.yml
