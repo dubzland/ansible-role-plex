@@ -1,0 +1,34 @@
+---
+- block:
+  - name: ensure the plex key is installed
+    apt_key:
+      url: "{{ dubzland_plex_repo_key_url }}"
+      state: present
+    tags:
+      - plex
+
+  - name: ensure the apt https transport is installed
+    apt:
+      name: apt-transport-https
+      state: present
+    tags:
+      - plex
+
+  - name: ensure the plex repo is available
+    apt_repository:
+      repo: deb {{ dubzland_plex_repo_url }} public main
+      state: present
+      update_cache: yes
+    tags:
+      - plex
+
+  - name: ensure plex packages are installed
+    apt:
+      name: "{{ dubzland_plex_packages }}"
+      state: present
+      install_recommends: no
+    notify:
+      - enable plex
+    tags:
+      - plex
+  when: ansible_os_family == 'Debian'

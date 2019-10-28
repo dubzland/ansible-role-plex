@@ -1,2 +1,5 @@
 ---
-# handlers file for dubzland-plex
+- name: enable plex
+  service:
+    name: "{{ dubzland_plex_service_name }}"
+    enabled: yes

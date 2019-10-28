@@ -1,0 +1,5 @@
+---
+dubzland_plex_repo_key_url: https://downloads.plex.tv/plex-keys/PlexSign.key
+dubzland_plex_repo_url: https://downloads.plex.tv/repo/deb
+dubzland_plex_packages:
+  - plexmediaserver
