@@ -8,7 +8,7 @@ lint:
 platforms:
   - name: debian9
     image: jdubz/docker-ansible-debian9:latest
-    override_command: False
+    override_command: false
     tmpfs:
       - /run
       - /run/lock
@@ -17,7 +17,7 @@ platforms:
     pre_build_image: true
   - name: debian10
     image: jdubz/docker-ansible-debian9:latest
-    override_command: False
+    override_command: false
     tmpfs:
       - /run
       - /run/lock

@@ -1,2 +1,3 @@
 ---
-# defaults file for dubzland-plex
+dubzland_plex_packages:
+  - plexmediaserver

@@ -2,7 +2,9 @@
 - import_tasks: variables.yml
 - import_tasks: packages.yml
 
+- meta: flush_handlers
+
 - name: ensure plex is running
   service:
     name: "{{ dubzland_plex_service_name }}"
-    state: running
+    state: started

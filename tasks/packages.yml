@@ -1,5 +1,12 @@
 ---
 - block:
+  - name: ensure gnupg is installed for apt-key
+    apt:
+      name: gnupg
+      state: present
+    tags:
+      - plex
+
   - name: ensure the plex key is installed
     apt_key:
       url: "{{ dubzland_plex_repo_key_url }}"
@@ -18,7 +25,7 @@
     apt_repository:
       repo: deb {{ dubzland_plex_repo_url }} public main
       state: present
-      update_cache: yes
+      update_cache: true
     tags:
       - plex
 
@@ -26,7 +33,7 @@
     apt:
       name: "{{ dubzland_plex_packages }}"
       state: present
-      install_recommends: no
+      install_recommends: true
     notify:
       - enable plex
     tags:

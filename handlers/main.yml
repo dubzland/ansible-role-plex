@@ -2,4 +2,4 @@
 - name: enable plex
   service:
     name: "{{ dubzland_plex_service_name }}"
-    enabled: yes
+    enabled: true
