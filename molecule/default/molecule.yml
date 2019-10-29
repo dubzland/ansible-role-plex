@@ -16,7 +16,7 @@ platforms:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     pre_build_image: true
   - name: debian10
-    image: jdubz/docker-ansible-debian9:latest
+    image: jdubz/docker-ansible-debian10:latest
     override_command: false
     tmpfs:
       - /run
