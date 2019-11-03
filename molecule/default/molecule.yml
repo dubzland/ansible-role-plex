@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: debian9
+  - name: dubzland-plex-debian9
     image: jdubz/docker-ansible-debian9:latest
     override_command: false
     tmpfs:
@@ -15,7 +15,7 @@ platforms:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
     pre_build_image: true
-  - name: debian10
+  - name: dubzland-plex-debian10
     image: jdubz/docker-ansible-debian10:latest
     override_command: false
     tmpfs:

@@ -1,5 +1,9 @@
 ---
 - name: Converge
   hosts: all
+  pre_tasks:
+    - name: update the apt cache
+      apt:
+        update_cache: true
   roles:
     - role: dubzland-plex
