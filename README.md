@@ -1,5 +1,5 @@
-# Dubzland: Plex
-[![Gitlab pipeline status (self-hosted)](https://img.shields.io/gitlab/pipeline/jdubz/dubzland-plex?gitlab_url=https%3A%2F%2Fgit.dubzland.net)](https://git.dubzland.net/jdubz/dubzland-plex/pipelines)
+# Ansible Role: Plex
+[![Gitlab pipeline status (self-hosted)](https://git.dubzland.net/dubzland/ansible-role-plex/badges/master/pipeline.svg)](https://git.dubzland.net/dubzland/ansible-role-plex)
 
 Installs and configures the Plex Media Server.
 
@@ -21,7 +21,7 @@ None
 - hosts: plex-servers
   become: yes
   roles:
-  - role: dubzland-plex
+  - role: dubzland.plex
 ```
 
 ## License
